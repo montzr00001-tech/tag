@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي</title>
+    <style>
+        body{
+            width: 100%;
+        }
+        button{
+            background-color: brown;
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(250, 250, 250);
+            border: none;
+            width: 15vw;
+            height: 7vh;
+            font-size: 5vh;
+            font-weight: bolder;
+            border-radius: 8px;
+        }
+        .aa{
+            color: rgb(2, 26, 131);
+        }
+        h1{
+            color: red;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        figure {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+        figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(70%);
+        }
+        figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: yellowgreen;
+            font-weight: bold;
+        }
+        .barc {
+            flex-direction: column;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            
+            
+        }
+        .bar {
+            width: 195px;
+            height: 50px;
+            background-color: cadetblue;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            justify-content: center;
+        }
+        .kk {
+            background-color: cadetblue;
+            width: 100%;
+            height: 0; /* يبدأ فارغ */
+            position: absolute;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="img/ik.jpg" alt="صورة">
+        <figcaption>
+            <h1 class="aa">مرحبا بك في موقعنا</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">الصفحة الرئيسية</a></li>
+                    <li><a href="#">الرسائل</a></li>
+                    <li><a href="#">الدعم</a></li>
+                    <li><a href="#">الخروج</a></li>
+                </ul>
+            </nav>
+
+            <section id="home">
+                <h2 class="aa">الصفحة الرئيسية</h2>
+
+                <!-- الشرائط -->
+                <div class="barc">
+                    <a href="ashura.html" class="bar" data-value="100">
+                        <h1>زيارة عاشوراء</h1>
+                    </a>
+
+                    <a href="arbaeen.html" class="bar" data-value="100">
+                        <h1>زيارة الاربعين</h1>
+                    </a> 
+                        
+                     <a href="husain.html" class="bar" data-value="100">
+                        <h1>زيارة الحسين ع</h1>
+                     </a>
+                    
+                   
+                
+                </div>
+            </section>
+        </figcaption>
+    </figure>
+
+    <script>
+        const bars = document.querySelectorAll('.bar');
+        bars.forEach(bar => {
+            bar.addEventListener('click', () => {
+                const fill = bar.querySelector('.kk'); // هنا صح
+                const value = bar.getAttribute('data-value');
+                fill.style.height = value + '%';
+            });
+        });
+    </script>
+</body>
+</html>
